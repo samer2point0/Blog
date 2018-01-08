@@ -1,0 +1,25 @@
+<%= form_for(@article, html: {multipart: true}) do |form| %>
+  <p>
+    <%= form.label :title %> <br>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%=form.label :tag_list %> <br>
+    <%=form.text_field :tag_list %>
+  </p>
+  <p>
+    <%= form.label :text %> <br>
+    <%= form.text_area :text %>
+  </p>
+  <p>
+    <% if @article.image.exists? %>
+      <%= image_tag @article.image.url(:thumb) %><br>
+    <% end%>
+    <%= form.label :image , "Attach a new image"%>
+    <%= form.file_field :image%>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+  <% end %>
+  <%= link_to 'back to Articles', articles_path %>
