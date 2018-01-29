@@ -17,44 +17,26 @@
  body{
    background-color: #f1f4fc;
  }
- #content{
 
-   margin: 50px auto;
-   width: 60%;
+ #content{
+   overflow: auto;
+   margin: 30px auto;
+   padding: 1em;
+   width: 80%;
+   height: 100%;
    border-style: none;
+  background-image: linear-gradient(to top,#fff ,#efd4e4);
  }
  h1{
    text-align: center;
    margin: 30px auto;
    padding: 15px;
    border-style: dashed;
-   border-color: #fff097;
-   width: 11em;
+   border-color: #ff1e9d;;
+   width: 70%;
  }
  h4{
    margin: 10px
- }
- li{
-   /*margin:5px 10px;*/
-   display: inline;
-   padding: 0 2%;
-   color: white !important;
- }
- div{
-
- }
- #nav {
-   font-size: 120%;
-   padding-top: 5px;
-   padding-bottom: 5px;
-   list-style: none;
-   background-color: #b00063;;
-   text-align: center;
-   width: 100%;
-   position: fixed;
-   top: 0;
-   left:0;
-   margin: 0 0;
  }
  a{
    text-decoration: none;
@@ -62,17 +44,11 @@
  a:hover{
   text-shadow: 2px 2px 2px;
  }
- table{
-   background-color: #bf005166;
-   border-radius: 5px;
+ .mainbtn{
+   display: block;
+   padding: 1em;
+   width: 13em;
  }
- th{
-   background-color: #81224799;
-  padding: 5px;
-  border-radius: 3px;
- }
- td{
-   padding: 5px;
-   border-spacing: 2PX;
-   background-color: #bf005166;
- }
+footer{
+  margin-top: 5EM;
+}

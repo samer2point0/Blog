@@ -1,3 +1,92 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+section#articles{
+
+  float: left;
+  width:65%;
+  min-width: 14em;
+  max-width: 100em;
+  padding: 0.1em;
+  border-radius: 5px;
+  margin: 0.5em;
+  background-image: linear-gradient(to top,#fff ,#efd4e4);
+  article.Article{
+    float: left;
+    min-width: 10em;
+    max-width: 30em;
+    width:45%;
+    padding: 0.5em;
+    margin:0.2em;
+    color: grey;
+    border-radius: 2px;
+    background-color: #a28496;
+    &:hover{
+      text-shadow: none;
+      box-shadow: 3px 3px 5px 2px;
+      background-image: linear-gradient(to top,#efd4e4,#cf91b5);
+    }
+    img{
+      display: block;
+      margin: auto;
+      width: 10em;
+    }
+    header.Atitle{
+      display: inline;
+      color:#6b003c;
+      h3{
+        margin:0;
+        font-family:fantasy;
+        font-weight: bold;
+      }
+    }
+    p.Atext{
+      margin: 0;
+      font-size: 16px;
+      color: #000;
+      overflow: hidden;
+      font-family: cursive;
+      height: 2em;
+    }
+  }
+}
+
+#nav {
+  font-size: 120%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  list-style: none;
+  background-color: #b00063;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left:0;
+  margin: 0 0;
+  li{
+    display: inline;
+    padding: 0 2%;
+    a{
+      font-family: fantasy;
+      font-weight: bold;
+      color: white !important;
+    }
+  }
+}
+form{
+  .title{
+    float: left;
+    width: 8em;
+    text-align: right;
+  }
+  textarea{
+    width: 70%;
+    height: 5em;
+    margin: auto;
+    align-items: center;
+  }
+  input.button{
+    float: right;
+  }
+
+}

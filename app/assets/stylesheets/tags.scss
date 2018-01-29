@@ -1,3 +1,26 @@
 // Place all the styles related to the tags controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#tagside{
+  /*width: 20%;*/
+  min-width: 10em;
+  display:inline-block;
+  float: left;
+
+  max-width: 25em;
+  padding: 0.5em;
+  margin:0.5em;
+  color: grey;
+  border-radius: 5px;
+  background-image: linear-gradient(to top,#fff ,#efd4e4);
+  h3{
+    color: black;
+  }
+  ul{
+    li{
+      display: inline-block;
+      list-style: none;
+      font-size: 120%
+    }
+  }
+}

@@ -1,15 +1,25 @@
 <h1>All Articles</h1>
-<table>
-  <tr>
-    <th>TITLE</th>
-    <th>TEXT</th>
-  </tr>
+<aside id="tagside">
+  <h3>By Tags: </h3>
+  <% @tags.each do |tag|%>
+    <ul>
+      <li><%= link_to tag.name, tag_path(tag) %></li>
+    </ul>
+  <%end%>
+</aside>
+<section id="articles">
   <% @articles.each do |article| %>
-    <tr>
-      <td><%=article.title%></td>
-      <td><%=article.text%></td>
-      <td><%= link_to 'show', article_path(article)%></td>
-    </tr>
+    <%= link_to (article_path(article)) do%>
+      <article class="Article">
+        <% if article.image.exists? %>
+        <%= image_tag article.image.url(:medium) %><br>
+        <% end%>
+        <header class="Atitle">
+          <h3><%=article.title.upcase%></h3>
+        </header>
+        <p class="Atext"><%=article.text %></p>
+      </article>
+    <%end%>
   <% end%>
-</table>
-<strong><%= link_to 'Add Article', new_article_path, class: 'create'%><strong>
+  <strong class="mainbtn"><%= link_to 'Add Article', new_article_path, class: 'create'%></strong>
+</section>

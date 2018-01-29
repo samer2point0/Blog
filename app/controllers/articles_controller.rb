@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
   end
   def index
     @articles=Article.all
+    @tags=Tag.all
   end
   def create
     @article =Article.new(articleParam)
