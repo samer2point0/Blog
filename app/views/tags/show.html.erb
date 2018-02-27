@@ -1,17 +1,16 @@
-<h1>Articles tagged with <%= @tag.name%> </h1>
+<header >
+<h1>Articles tagged with <span class'tag title'><%= @tag.name%></span> </h1>
+</header>
 <section id="articles">
   <% @tag.articles.each do |article| %>
     <%= link_to (article_path(article)) do%>
-      <article class="Article">
-        <% if article.image.exists? %>
-        <%= image_tag article.image.url(:medium) %><br>
-        <% end%>
-        <header class="Atitle">
-          <h3><%=article.title.upcase%></h3>
-        </header>
-        <p class="Atext"><%=article.text %></p>
+      <article class="Article preview">
+        <%=render article %>
       </article>
     <%end%>
   <% end%>
-  <strong class="mainbtn"><%= link_to '<<back to Articles', articles_path%></strong>
 </section>
+<footer>
+  <span class="mainbtn"><%= link_to 'Add Article', new_article_path%></span>
+  <%= link_to '<<back to Articles', articles_path%>
+</footer>

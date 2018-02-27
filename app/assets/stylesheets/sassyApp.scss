@@ -1,7 +1,13 @@
+header, footer,aside, .standalone{
+  margin:0;
+  &section{
+    padding: 5% 0;
+  }
+}
 #appHeader {
   font-size: 120%;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: #b00063;
   text-align: center;
   width: 100%;

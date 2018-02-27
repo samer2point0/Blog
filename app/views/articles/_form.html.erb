@@ -1,28 +1,27 @@
 <fieldset >
-  <legend>Article:</legend>
-<%= form_for(@article, html: {multipart: true}) do |form| %>
-  <p>
-    <span class="title">Title:</span>
-    <%= form.text_field :title %>
-  </p>
-  <p>
-    <span class="title">Tag list:</span>
-    <%=form.text_field :tag_list %>
-  </p>
-  <p>
-    <span class="title">Content:</span>
-    <%= form.text_area :text %>
-  </p>
-  <p>
-    <% if @article.image.exists? %>
-      <%= image_tag @article.image.url(:thumb) %><br>
-    <% end%>
-    <%= form.label :image , "Attach a new image" %>
-    <%= form.file_field :image%>
-  </p>
-  <p>
-    <%= form.submit  class:"button"%>
-  </p>
+  <legend>New Article:</legend>
+  <%= form_for(@article, html: {multipart: true}) do |form| %>
+    <div class="field">
+      <%= form.label  :title, 'Title:'%>
+      <%= form.text_field :title %>
+    </div>
+    <div class="field">
+      <%= form.label  :tag_list, 'Tags:'%>
+      <%=form.text_field :tag_list %>
+    </div>
+    <div class="field">
+      <%= form.label  :text, 'Body:'%>
+      <%= form.text_area :text %>
+    </div>
+
+    <div class="field">
+      <% if @article.image.exists? %>
+        <%= image_tag @article.image.url(:thumb) %><br>
+      <% end%>
+      <%= form.label :image , "Attach a new image" %>
+      <%= form.file_field :image%>
+    </div>
+
+    <span class="mainbtn"> <%= form.submit %></span>
   <% end %>
-  <%= link_to 'back to Articles', articles_path %>
 </fieldset>

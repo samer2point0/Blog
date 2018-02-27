@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <header id="appHeader">
+    <header id="appHeader" class=" static">
       <span id="login">
         <span class='mobileOnly'><%='Hi '+ (current_user||'stranger')+', '%></span> <!--name of user-->
         <% if logged_in? %>
@@ -19,13 +19,13 @@
         <%end%>
       </span>
       <ul id="nav">
-        <li><%= link_to "Tags", tags_path%></li>
+        <li><%= link_to "Portflio",  '#'%></li>
         <li><%= link_to "Blog", articles_path%></li>
         <li><%= link_to "About", welcome_index_path%></li>
       </ul>
     </header>
-    <p class ="flash"><%=flash.notice %></p>
-    <div id="content">
+    <p class ="flash" data-flash=''><%=flash.notice %></p>
+    <div id="content" class="standalone">
       <%= yield %>
     </div>
     <hr>

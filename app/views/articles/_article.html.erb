@@ -1,0 +1,23 @@
+
+<header class=" Aheader">
+  <%# if article.image.exists? %>
+    <%#= image_tag article.image.url(:medium) %><br>
+  <%# #end%>
+  <h3 class='title'><%=article.title.capitalize%></h3>
+  <ul class="tags">
+    <% article.tags.each do |tag|%>
+      <li><%= link_to tag.name, tag_path(tag), class:'tag' %></li>
+    <%end%>
+  </ul>
+</header>
+
+<section class=" Abody">
+  <p><%=article.text %></p>
+</section>
+
+<footer class="  Afooter">
+  <!--share article links-->
+  <!--only show for admins-->
+  <%=link_to ' delete', article, method: :delete, data:{confirm:'Are you sure?'}%>
+  <%= link_to ' edit', edit_article_path(article.id)%>
+</footer>

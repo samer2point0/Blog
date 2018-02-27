@@ -1,0 +1,9 @@
+<section id="comment">
+  <div id="user_thumb">
+    <%=render 'shared/user_thumb'%>
+  </div>
+  <div id="commentBody">
+    <%=comment.body%> <br>
+    <p class="date">Posted <%=distance_of_time_in_words(comment.created_at,Time.now)%> ago</p>
+  </div>
+</section>
