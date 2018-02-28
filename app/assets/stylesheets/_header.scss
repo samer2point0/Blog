@@ -1,0 +1,63 @@
+#appHeader {
+  font-size: 160%;
+  background-color: $nav_color;
+  text-align: center;
+  width: 100%;
+  height:30px;
+  padding: 15px 0;
+  padding-top: 20px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left:0;
+  #nav{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li{
+      display: inline;
+      padding: 20px 3%;
+      position:relative;
+      z-index: -1;
+      &.active{
+        animation: drop 1s;
+        animation-fill-mode: forwards;
+      }
+      a{
+        font: $nav_font;
+        color: $primary_font_color;
+        text-shadow: none;
+      }
+    }
+  }
+  #login{
+    //screen >450
+    float:right;
+    padding: 15px 30px;
+    font-size: 50%;
+    background-color: $footer_color;
+    span{
+      font-size: 60%;
+    }
+    @media #{$small_screens}{
+      display:block;
+      width: 100%;
+      margin:auto;
+      padding: 0 5px;
+      text-align: right;
+      position: relative;
+      bottom:20px;
+    }
+  }
+}
+
+.mobileOnly{
+  @media #{$not_small_screens}{
+    display: none;
+  }
+}
+
+@keyframes drop {
+  from { background-color: $nav_color; top:0}
+  to   { background-color: $mid_color; top:40px;}
+}

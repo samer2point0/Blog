@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>First</title>
+    <title><%=full_title(yield(:title))%></title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -19,17 +18,17 @@
         <%end%>
       </span>
       <ul id="nav">
-        <li><%= link_to "Portflio",  '#'%></li>
-        <li><%= link_to "Blog", articles_path%></li>
-        <li><%= link_to "About", welcome_index_path%></li>
+        <li class='<%=active_class(yield(:title),'Portfolio')%>'><%= link_to "Portfolio",  '#'%></li>
+        <li class='<%=active_class(yield(:title),'Blog')%>'><%= link_to "Blog", articles_path%></li>
+        <li class='<%=active_class(yield(:title),'About')%>'><%= link_to "About", welcome_index_path%></li>
       </ul>
     </header>
     <p class ="flash" data-flash=''><%=flash.notice %></p>
     <div id="content" class="standalone">
       <%= yield %>
     </div>
-    <hr>
     <footer id="footer">
+      <hr>
       <!--enter web pressence/ copyrights / etc-->
     </footer>
   </body>

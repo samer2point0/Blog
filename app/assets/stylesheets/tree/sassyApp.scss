@@ -1,0 +1,27 @@
+//colors
+  $primary_color:#2c0011;
+  $secondary_color:white;
+  $mid_color:#450020;
+  $nav_color:#560024;
+  $footer_color:#0e0f1a;
+
+//font variables
+  $primary_font:garamond;//courier
+  $primary_font_color: white;
+  $Heading_font:times;
+  $Heading_font_color: $nav_color;
+  $subheading_font: palatino;//georgia
+  $nav_font: impact;
+
+//REsponsive breakpoints
+  $small_screens:'only screen and (max-width: 420px)';
+  $not_small_screens:'only screen and (min-width: 420px)'; //applies to both large and medium
+  $large_screens:'only screen and (min-width: 1240px)';
+
+@import '../body';
+@import '../header';
+@import '../articles' ;
+@import '../tags' ;
+@import '../comments';
+@import '../welcome';
+@import '../forms';

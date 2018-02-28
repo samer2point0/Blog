@@ -1,0 +1,59 @@
+// Place all the styles related to the Articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+section#articles{
+  float: left;
+  width:69%;
+  min-width: 320px;
+  max-width: 640px;
+  @media #{$large_screens}{
+    min-width: 960px;
+    max-width: none;
+  }
+  @media #{$small_screens}{
+    width:100%;
+  }
+  padding: 0;
+}
+
+article.Article{
+  float: left;
+  min-width: 10em;
+  max-width: 30em;
+  width:45%;
+  margin: 10px;
+  padding: 10px;
+  color: black;
+  background-color: $secondary_color;
+  position: relative;
+  @media #{$small_screens}{
+    max-width: none;
+    width: 100%;
+  }
+  &:hover{
+    text-shadow: none;
+    box-shadow: 2px 2px 5px;
+  }
+  img{
+    display: block;
+    margin: auto;
+    width: 10em;
+  }
+  header.Atitle{
+    display: inline;
+    color:#6b003c;
+    h3{
+      margin:0;
+      font-family:fantasy;
+      font-weight: bold;
+    }
+  }
+  p.Atext{
+    margin: 0;
+    font-size: 16px;
+    color: #000;
+    overflow: hidden;
+    font-family: cursive;
+    height: 2em;
+  }
+}

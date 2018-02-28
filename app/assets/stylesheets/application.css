@@ -10,32 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ *= require_tree ./tree
  *= require_self
 
  */
- body{
-   background-color: #fff2f2;
- }
-
- #content{
-   overflow: auto;
-   margin: 50px auto;
-   width: 100%;
-   max-width: 1200px;
-   height: 100%;
-   border-style: none;
- }
-
- a{
-   text-decoration: none;
- }
- a:hover{
-  text-shadow: 2px 2px 2px;
- }
- .mainbtn{
-   display: block;
-   padding: 1em;
-   width: 13em;
-   float: right;
- }

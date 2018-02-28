@@ -1,0 +1,23 @@
+.mainbtn{
+  display: block;
+  padding: 1em;
+  width: 13em;
+  float: right;
+}
+form{
+  .title{
+    float: left;
+    width: 8em;
+    text-align: right;
+  }
+  textarea{
+    width: 70%;
+    height: 5em;
+    margin: auto;
+    align-items: center;
+  }
+  input.button{
+    float: right;
+  }
+
+}
