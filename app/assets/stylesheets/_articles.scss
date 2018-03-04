@@ -2,14 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 section#articles{
-  float: left;
-  width:69%;
+  float: right;
+  width:70%;
   min-width: 320px;
-  max-width: 640px;
-  @media #{$large_screens}{
-    min-width: 960px;
-    max-width: none;
-  }
   @media #{$small_screens}{
     width:100%;
   }
@@ -18,42 +13,57 @@ section#articles{
 
 article.Article{
   float: left;
-  min-width: 10em;
-  max-width: 30em;
-  width:45%;
-  margin: 10px;
-  padding: 10px;
-  color: black;
-  background-color: $secondary_color;
+  margin: 5px;
+  padding:10px;
+  padding-top: 0;
+  background-color: $primary_color;
   position: relative;
-  @media #{$small_screens}{
-    max-width: none;
+  border-left: solid 5px $secondary_color;
+  &.preview{
+    min-width: 200px;
+    max-width: 300px;
     width: 100%;
-  }
-  &:hover{
-    text-shadow: none;
-    box-shadow: 2px 2px 5px;
-  }
-  img{
-    display: block;
-    margin: auto;
-    width: 10em;
-  }
-  header.Atitle{
-    display: inline;
-    color:#6b003c;
-    h3{
-      margin:0;
-      font-family:fantasy;
-      font-weight: bold;
+    @media #{$large_screens}{
+      width:40%
+    }
+    &:hover{
+      animation: out 1s;
+      animation-fill-mode: forwards;
+    }
+    .Abody{
+          height: 6em;
     }
   }
-  p.Atext{
-    margin: 0;
-    font-size: 16px;
-    color: #000;
-    overflow: hidden;
-    font-family: cursive;
-    height: 2em;
+  img{
+    display: inline;
+    margin: auto;
+    width: 100%;
   }
+  .Aheader{
+    color:$Heading_font_color;
+    border-bottom: 1px solid $footer_color;
+    h3{
+      display: inline-block;
+      margin:0;
+      font-size: 140%;
+      font-family:$subheading_font;
+      font-weight: bold;
+      &:hover{
+        text-shadow: 3px 3px 2px $primary_font_color;
+      }
+    }
+  }
+  .Abody{
+    margin: 5px;
+    overflow: hidden;
+    font-family: $primary_font;
+    p{
+      margin:0;
+    }
+  }
+}
+
+@keyframes out {
+  0%{box-shadow: none; right: 0; bottom: 0;background-color:$primary_color; }
+  100%{ box-shadow: 5px 5px 10px 0; right: 5px; bottom: 5px;background-color: $secondary_color}
 }

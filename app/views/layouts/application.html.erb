@@ -9,6 +9,8 @@
 
   <body>
     <header id="appHeader" class=" static">
+      <div id="menu">
+      </div>
       <span id="login">
         <span class='mobileOnly'><%='Hi '+ (current_user||'stranger')+', '%></span> <!--name of user-->
         <% if logged_in? %>
@@ -18,9 +20,9 @@
         <%end%>
       </span>
       <ul id="nav">
-        <li class='<%=active_class(yield(:title),'Portfolio')%>'><%= link_to "Portfolio",  '#'%></li>
-        <li class='<%=active_class(yield(:title),'Blog')%>'><%= link_to "Blog", articles_path%></li>
-        <li class='<%=active_class(yield(:title),'About')%>'><%= link_to "About", welcome_index_path%></li>
+        <li><%= link_to "Portfolio",  '#', class:active_class(yield(:title),'Portfolio')%></li>
+        <li><%= link_to "Blog", articles_path, class:active_class(yield(:title),'Blog')%></li>
+        <li><%= link_to "About", welcome_index_path, class:active_class(yield(:title),'About')%></li>
       </ul>
     </header>
     <p class ="flash" data-flash=''><%=flash.notice %></p>

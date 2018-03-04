@@ -1,8 +1,8 @@
 body{
   color:$primary_font_color;
-  margin: 0;
   background-color: $primary_color;
-  header, footer,aside, .standalone, section{
+  margin: 0;
+  header, footer,aside, .standalone, section, img{
     margin:0;
   }
   #content{
@@ -10,12 +10,11 @@ body{
     margin: 150px 0;
     width: 100%;
     height: 100%;
+
   }
   a{
     text-decoration: none;
-    &:hover{
-      text-shadow: 2px 2px 2px;
-    }
+    color: inherit;
   }
 }
 #footer{

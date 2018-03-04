@@ -1,22 +1,25 @@
 //colors
-  $primary_color:#2c0011;
-  $secondary_color:white;
-  $mid_color:#450020;
-  $nav_color:#560024;
-  $footer_color:#0e0f1a;
+  $primary_color:white;
+  $secondary_color:#ffd9d9; //biege
+  $tags_color:#b1254c;
+  $header_color:$primary_color;
+  $footer_color:#181a2d;
+  $buttons_color:$footer_color;
 
 //font variables
   $primary_font:garamond;//courier
-  $primary_font_color: white;
+  $primary_font_color: #1b7896;
   $Heading_font:times;
-  $Heading_font_color: $nav_color;
+  $Heading_font_color: $footer_color;
   $subheading_font: palatino;//georgia
   $nav_font: impact;
+  $nav_font_color:$primary_font_color;
 
 //REsponsive breakpoints
   $small_screens:'only screen and (max-width: 420px)';
   $not_small_screens:'only screen and (min-width: 420px)'; //applies to both large and medium
-  $large_screens:'only screen and (min-width: 1240px)';
+  $medium_screens:'only screen and (min-width: 600px)';
+  $large_screens:'only screen and (min-width: 900px)';
 
 @import '../body';
 @import '../header';

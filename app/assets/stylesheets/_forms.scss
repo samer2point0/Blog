@@ -1,8 +1,17 @@
-.mainbtn{
-  display: block;
-  padding: 1em;
-  width: 13em;
+.btn, .mainbtn{
+  margin: 2px;
+  display: inline-block;
+  padding: 5px;
   float: right;
+  color: white;
+  background-color: $buttons_color;
+  border-radius: 3px;
+  &.mainbtn{
+    margin:30px;
+  }
+  &:hover{
+    box-shadow: 0px 0px 5px 2px $primary_font_color;
+  }
 }
 form{
   .title{

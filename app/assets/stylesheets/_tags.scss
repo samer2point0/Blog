@@ -2,19 +2,52 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #tagside{
-  min-width: 10em;
+  min-width: 150px;
   float: left;
-  width: 28%;
-  max-width: 25em;
+  width: 100%;
+  max-width: 320px;
   min-height: 300px;
-  padding: 0.5em;
-  color: $primary_font_color;
-  background-color: $nav_color;
+  padding: 10px;
+  border-right:5px solid $footer_color;
+  @media #{$medium_screens}{
+    width:20%;
+  }
+  &:hover{
+    animation: appear 1s;
+    animation-fill-mode: forwards;
+  }
+  h3{
+    margin: 0 20px;
+    margin-bottom: 10px;
+    color: $Heading_font_color;
+  }
 }
 .tags{
   padding: 0;
+  margin: 0;
+  display: block;
+  overflow: auto;
   li{
+    padding: 5px;
+    display: inline;
+    float: left;
+    margin: 3px;
+    animation: showtags 2s;
+    animation-fill-mode: forwards;
+    border-radius: 5px;
     display: inline-block;
     list-style: none;
+    color: white;
+    &:hover{
+      box-shadow: 0px 0px 3px 1px $primary_font_color;
+    }
   }
+}
+@keyframes showtags {
+  0%{background-color: inherit;}
+  100%{background-color: $tags_color;}
+}
+@keyframes appear {
+  0%{background-color: $primary_color;}
+  100%{background-color: $secondary_color;  }
 }

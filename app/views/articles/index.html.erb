@@ -4,7 +4,9 @@
   <h3>Tags</h3>
   <ul class="tags">
     <% @tags.each do |tag|%>
-      <li><%= link_to tag.name, tag_path(tag), class:'tag' %></li>
+      <%= link_to tag_path(tag) do %>
+        <li class='tag'><%=tag.name %></li>
+      <%end%>
     <%end%>
   </ul>
 </aside>
@@ -17,8 +19,8 @@
       </article>
     <%end%>
   <% end%>
+  <%= link_to 'Add Article', new_article_path, class:'mainbtn'%>
 </section>
 
 <footer>
-  <span class="mainbtn"><%= link_to 'Add Article', new_article_path%></span>
 </footer>

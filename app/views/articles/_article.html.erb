@@ -6,7 +6,9 @@
   <h3 class='title'><%=article.title.capitalize%></h3>
   <ul class="tags">
     <% article.tags.each do |tag|%>
-      <li><%= link_to tag.name, tag_path(tag), class:'tag' %></li>
+      <%= link_to tag_path(tag) do %>
+        <li class='tag'><%=tag.name %></li>
+      <%end%>
     <%end%>
   </ul>
 </header>
@@ -18,6 +20,6 @@
 <footer class="  Afooter">
   <!--share article links-->
   <!--only show for admins-->
-  <%=link_to ' delete', article, method: :delete, data:{confirm:'Are you sure?'}%>
-  <%= link_to ' edit', edit_article_path(article.id)%>
+  <%=link_to ' delete', article, method: :delete, data:{confirm:'Are you sure?'}, class:'btn'%>
+  <%= link_to ' edit', edit_article_path(article.id), class:'btn'%>
 </footer>
