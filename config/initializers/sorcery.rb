@@ -2,7 +2,7 @@
 # The default is nothing which will include only core features (password encryption, login/logout).
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging, :external
-Rails.application.config.sorcery.submodules = []
+Rails.application.config.sorcery.submodules = [:external, :remember_me]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
@@ -66,7 +66,7 @@ Rails.application.config.sorcery.configure do |config|
   # What providers are supported by this app, i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce, :slack] .
   # Default: `[]`
   #
-  # config.external_providers =
+  config.external_providers =[:twitter, :facebook, :github ]
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
   # Path to ca_file. By default use a internal ca-bundle.crt.
@@ -103,20 +103,20 @@ Rails.application.config.sorcery.configure do |config|
   # config.twitter.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=twitter"
   # config.twitter.user_info_mapping = {:email => "screen_name"}
   #
-  # config.facebook.key = ""
-  # config.facebook.secret = ""
-  # config.facebook.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=facebook"
-  # config.facebook.user_info_mapping = {:email => "name"}
-  # config.facebook.access_permissions = ["email", "publish_actions"]
-  # config.facebook.display = "page"
-  # config.facebook.api_version = "v2.3"
-  # config.facebook.parse = :json
+   config.facebook.key = "208325036386038"
+   config.facebook.secret = "-KWHJi7HrH9m0TQnV4zKEvY8FBU"
+   config.facebook.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=facebook"
+   config.facebook.user_info_mapping = {:email => "email", :username=>"username"}
+   config.facebook.access_permissions = ["email", "username", "publish_actions"]
+   config.facebook.display = "popup"
+   config.facebook.api_version = "v2.3"
+   config.facebook.parse = :json
   #
-  # config.github.key = ""
-  # config.github.secret = ""
-  # config.github.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=github"
-  # config.github.user_info_mapping = {:email => "name"}
-  # config.github.scope = ""
+   config.github.key = "df5cb3c3d3587a11045a"
+   config.github.secret = "c790ddbc95e3388a27cc15657867ed141f6cba85"
+   config.github.callback_url = "http://0.0.0.0:3000/oauth/callback?provider=github"
+   config.github.user_info_mapping = {:email => "email", :username=>"username"}
+   config.github.scope = "user:read"
   #
   # config.paypal.key = ""
   # config.paypal.secret = ""
@@ -426,7 +426,7 @@ Rails.application.config.sorcery.configure do |config|
     # Class which holds the various external provider data for this user.
     # Default: `nil`
     #
-    # user.authentications_class =
+    user.authentications_class = Authentication
 
     # User's identifier in authentications class.
     # Default: `:user_id`
@@ -446,5 +446,5 @@ Rails.application.config.sorcery.configure do |config|
 
   # This line must come after the 'user config' block.
   # Define which model authenticates with sorcery.
-  config.user_class = 'Author'
+  config.user_class = 'User'
 end

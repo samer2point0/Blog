@@ -1,0 +1,10 @@
+<% @user=current_user || User.new()%>
+<div id="user_popup">
+  <div id="user_close">
+
+  </div>
+  <section id='user_info'>
+    <h1>Hi <%=@user.username||'stranger'%></h1>
+    <%= render 'user/form', user: @user %>
+  </section>
+</div>

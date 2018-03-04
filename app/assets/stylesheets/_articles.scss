@@ -18,6 +18,7 @@ article.Article{
   padding-top: 0;
   background-color: $primary_color;
   position: relative;
+  z-index: 1;
   border-left: solid 5px $secondary_color;
   &.preview{
     min-width: 200px;

@@ -1,0 +1,18 @@
+$().ready(function(){
+
+  $('#login').onclick(function(){
+    if $('#user_popup')==null{
+      $('body').append('<%=render 'user/login'%>');
+    }
+    else $('#user_popup')==null{
+      $('user_popup').css({
+        'display':'block'
+      })
+    }
+  })
+  $('#user_close').onclick(function(){
+    $('user_popup').css({
+      'display':'none'
+    })
+  })
+})

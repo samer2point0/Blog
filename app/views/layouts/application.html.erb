@@ -11,14 +11,14 @@
     <header id="appHeader" class=" static">
       <div id="menu">
       </div>
-      <span id="login">
-        <span class='mobileOnly'><%='Hi '+ (current_user||'stranger')+', '%></span> <!--name of user-->
-        <% if logged_in? %>
-        <%= link_to "logout", logout_path%>
+      <span id="login" >
+        <%if logged_in?%>
+          <%='Hi ' +current_user.username%> <!--name of user-->
         <%else%>
-        <%=link_to "login", login_path%>
+          Hi stranger
         <%end%>
       </span>
+
       <ul id="nav">
         <li><%= link_to "Portfolio",  '#', class:active_class(yield(:title),'Portfolio')%></li>
         <li><%= link_to "Blog", articles_path, class:active_class(yield(:title),'Blog')%></li>

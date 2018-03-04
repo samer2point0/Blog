@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #tagside{
+  position: relative;
+  z-index: 1;
   min-width: 150px;
   float: left;
   width: 100%;
@@ -17,9 +19,11 @@
     animation-fill-mode: forwards;
   }
   h3{
-    margin: 0 20px;
+    padding: 20px;
+    padding-top: 0;
     margin-bottom: 10px;
     color: $Heading_font_color;
+    border-bottom: 1px solid $footer_color;
   }
 }
 .tags{
@@ -48,6 +52,6 @@
   100%{background-color: $tags_color;}
 }
 @keyframes appear {
-  0%{background-color: $primary_color;}
-  100%{background-color: $secondary_color;  }
+  0%{background-color: $primary_color;box-shadow: none; left: 0; top: 0;}
+  100%{background-color: $secondary_color;box-shadow: -5px -5px 5px 0; left: 10px; top: 10px;  }
 }
