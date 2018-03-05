@@ -1,0 +1,52 @@
+#user_popup{
+  display:block;
+  overflow:auto;
+  align-items: center;
+  margin: 0 25vw;
+  width: 50vw;
+  height: 100vh;
+  @media #{$medium_screens}{
+    min-width: 600px;
+  }
+  background-color: $shade;
+  position: fixed;
+  z-index: 2;
+  right: 0;
+  top: 0;
+  #user_info{
+    position: relative;
+    z-index: 3;
+    width:300px;
+    height: 400px;
+    margin: auto;
+    background-color: black;
+  }
+  .popup_commands{
+    position: relative;
+    margin: auto;
+    height:100px;
+    width: 340px;
+    div[id|="popup"]{
+      position: absolute;
+      z-index: 2;
+      height: 520px;
+      width:170px;
+      color: white;
+      opacity: 0.6;
+      font-size:150%;
+      text-align: center;
+      &:hover{
+        opacity: 0.9;
+      }
+    }
+    #popup-save{
+      background-color: $save;
+      left: 0;
+    }
+    #popup-close{
+      background-color: $close;
+      right:0;
+    }
+  }
+
+}

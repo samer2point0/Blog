@@ -12,6 +12,10 @@
     animation: lit 2s;
     animation-fill-mode: forwards;
   }
+  a:hover{
+    color: white;
+    text-shadow: 0 0 5px;
+  }
   #menu{
     position: relative;
     z-index: 2;
@@ -38,10 +42,6 @@
           animation: drop 1s;
           animation-fill-mode: forwards;
         }
-        &:hover{
-          color: white;
-          text-shadow: 0 0 5px;
-        }
       }
     }
   }
@@ -51,10 +51,6 @@
     padding: 20px;
     font-size: 70%;
     z-index: 1;
-    &:hover{color: white; text-shadow: 0 0 3px;}
-    span{
-      font-size: 60%;
-    }
     @media #{$small_screens}{
       display:block;
       width: 100%;

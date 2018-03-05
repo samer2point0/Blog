@@ -5,6 +5,9 @@
   $header_color:$primary_color;
   $footer_color:#181a2d;
   $buttons_color:$footer_color;
+  $save:#255f6e;
+  $close:#ba2222;
+  $shade:#ffcccc4d;
 
 //font variables
   $primary_font:garamond;//courier
@@ -28,3 +31,4 @@
 @import '../comments';
 @import '../welcome';
 @import '../forms';
+@import "../user";

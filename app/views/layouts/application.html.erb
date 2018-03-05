@@ -12,11 +12,8 @@
       <div id="menu">
       </div>
       <span id="login" >
-        <%if logged_in?%>
-          <%='Hi ' +current_user.username%> <!--name of user-->
-        <%else%>
-          Hi stranger
-        <%end%>
+        Hi <%=logged_in? ? link_to(current_user.username.titelize, current_user, remote:true) :
+                          link_to('stranger', signup_path, remote: true)%>
       </span>
 
       <ul id="nav">
