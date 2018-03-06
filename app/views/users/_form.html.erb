@@ -1,4 +1,5 @@
 <fieldset>
+
   <legend><%=@user.username ? 'Edit account' : 'Sign up'%></legend>
   <%= form_with(model: user, local: true) do |form| %>
     <% if user.errors.any? %>
@@ -23,6 +24,13 @@
       <%= form.password_field :password_confirmation, id: :user_password_confirmation %>
     </div>
 
-      <span class="mainbtn"> <%= form.submit %></span>
+    <%if !@user.username%>
+      <div id="remember_me" class="field">
+        <%=form.label :remember_me, 'remember me on this computer'%>
+        <%=form.check_box :remember_me%>
+      </div>
+    <%end%>
+
+      <%= form.submit (@user.username ? 'Create!' : 'Update'),  class:'mainbtn'%>
   <% end %>
 </fieldset>

@@ -1,0 +1,20 @@
+<div id="user_popup">
+  <div class="popup_commands">
+    <div id="popup-close" onclick="close_popup()">
+        Close
+    </div>
+    <%if current_user==@user%>
+      <%=link_to(edit_user_path(@user)) do%>
+        <div id="popup-save">
+          edit
+        </div>
+      <%end%>
+    <%end%>
+  </div>
+  <section id='user_info'>
+    <%= render @user %>
+    <footer>
+
+    </footer>
+  </section>
+</div>

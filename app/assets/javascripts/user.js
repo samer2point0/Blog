@@ -1,3 +1,3 @@
 function close_popup(){
-  $('#user_popup').remove()
+  $('#user_popup').remove();
 }

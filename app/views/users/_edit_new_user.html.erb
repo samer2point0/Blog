@@ -1,16 +1,17 @@
 <div id="user_popup">
+
   <div class="popup_commands">
     <div id="popup-close" onclick="close_popup()">
         Close
     </div>
-    <a href="<%=new_user_path%>">
-      <div id="popup-save" onclick="close_popup()">
+    <%=link_to(login_path) do%>
+      <div id="popup-save">
         login
       </div>
-    </a>
+    <%end%>
   </div>
   <section id='user_info'>
-    <%= render 'users/form', user: @user %>
+    <%= render 'form', user: @user %>
     <footer>
       <%=link_to 'login with facebook', auth_at_provider_path(provider: :facebook) %>
       <%=link_to 'login with github', auth_at_provider_path(provider: :github) %>

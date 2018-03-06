@@ -1,0 +1,23 @@
+<fieldset>
+
+  <legend>Login</legend>
+  <%= form_for(:user_sessions, url:'/user_sessions') do |form| %>
+
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email, id: :user_email %>
+    </div>
+    <div class="field">
+      <%= form.label :password %>
+      <%= form.password_field :password, id: :user_password %>
+    </div>
+
+    <div id="remember_me" class="field">
+      <%=form.label :remember_me, 'remember me on this computer'%>
+      <%=form.check_box :remember_me%>
+    </div>
+
+
+      <%= form.submit, class:'mainbtn'%>
+  <% end %>
+</fieldset>

@@ -12,7 +12,7 @@
       <div id="menu">
       </div>
       <span id="login" >
-        Hi <%=logged_in? ? link_to(current_user.username.titelize, current_user, remote:true) :
+        Hi <%=logged_in? ? link_to(current_user.username.titleize, current_user, remote:true) :
                           link_to('stranger', signup_path, remote: true)%>
       </span>
 
@@ -27,6 +27,11 @@
       <%= yield %>
     </div>
     <footer id="footer">
+      <div id="message_thingy">
+        <%=link_to messages_new_path, remote:true do%>
+          <%=image_tag '/images/mr_meeseeks_face', alt:'default user photo', size:'60x60'%>
+        <%end%>
+      </div>
       <hr>
       <!--enter web pressence/ copyrights / etc-->
     </footer>

@@ -1,3 +1,7 @@
-<section>
-  <%=render 'form' , :user=@user%>
+<section >
+  <%= render 'form', user:@user%>
+  <footer>
+    <%=link_to 'login with facebook', auth_at_provider_path(provider: :facebook) %>
+    <%=link_to 'login with github', auth_at_provider_path(provider: :github) %>
+  </footer>
 </section>

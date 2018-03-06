@@ -1,0 +1,13 @@
+<header>
+  <h1><%=user.username%>'s Profile</h1>
+</header>
+<section>
+  <%# if user.image.exists?%>
+    <%#=image_tag user.image.url, alt:'user photo', size:'150x150'%>
+  <%#else%>
+   <%#=image_tag 'images/mr_meeseeks_face.jpeg', alt:'default user photo', size:'150x150'%>
+  <%#end%>
+  <%#='email: ' user.email if admin?(current_user) %>
+  <p>here since: <%=time_ago_in_words(user.created_at)%></p>
+  <%#= render user.comments %>
+</section>
