@@ -20,7 +20,14 @@ article.Article{
   position: relative;
   z-index: 1;
   border-left: solid 5px $secondary_color;
+  &.main{
+    max-width: 850px;
+    border-radius: 20px 5px;
+    border-left-color: $footer_color;
+    background-color: $secondary_color;
+  }
   &.preview{
+    border-radius: 0 20px;
     min-width: 200px;
     max-width: 300px;
     width: 100%;

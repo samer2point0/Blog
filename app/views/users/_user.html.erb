@@ -7,7 +7,13 @@
   <%#else%>
    <%#=image_tag 'images/mr_meeseeks_face.jpeg', alt:'default user photo', size:'150x150'%>
   <%#end%>
-  <%#='email: ' user.email if admin?(current_user) %>
-  <p>here since: <%=time_ago_in_words(user.created_at)%></p>
-  <%#= render user.comments %>
+  <%if current_user.admin? %>
+    <%='email: '+user.email %>
+  <%end%>
+  <span>here since: <%=time_ago_in_words(user.created_at)%></span>
+
+  <div class="messages">
+    <%=render user.all_messages%>
+  </div>
+  
 </section>

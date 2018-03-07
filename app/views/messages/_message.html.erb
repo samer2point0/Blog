@@ -1,0 +1,12 @@
+<section class="message">
+  <div class="user_thumb">
+    <%=render 'shared/user_thumb', user:message.sender%>
+  </div>
+  <div class="messageTopic">
+    Subject: <%=message.topic%>
+  </div>
+  <div class="messageBody">
+    <%=message.body%> <br>
+    <span class="date">sent <%=distance_of_time_in_words(message.created_at,Time.now)%> ago</span>
+  </div>
+</section>

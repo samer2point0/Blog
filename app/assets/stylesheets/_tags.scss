@@ -11,6 +11,7 @@
   min-height: 300px;
   padding: 10px;
   border-right:5px solid $footer_color;
+  border-radius: 20px 0;
   @media #{$medium_screens}{
     width:20%;
   }

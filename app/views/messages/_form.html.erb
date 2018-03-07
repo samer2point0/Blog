@@ -1,0 +1,30 @@
+<fieldset>
+  <legend>Message Samer</legend>
+  <%=form_for(@message) do |form|%>
+
+    <% if @message.errors.any? %>
+     <%=render 'shared/error_explanation', object:form.object%>
+    <% end %>
+
+    <%=form.hidden_field :reciever_id, value: @message.reciever.id %>
+
+    <div class="field">
+      <%=form.text_field :topic, placeholder: 'co-operate, service, feedback...' %>
+    </div>
+
+    <div class="field">
+      <%=form.text_area :body, placeholder: 'Communication is what makes us human, so let\'s communicate' %>
+    </div>
+    <% if logged_in?%>
+      <div class="field">
+        <%=check_box_tag :email_me%>
+        <%=label_tag :email_me, 'Also send as email'%>
+      </div>
+    <%else%>
+      <span>please log in to send as email</span>
+    <%end%>
+
+    <%=form.submit 'Send', class:'btn'%>
+
+  <%end%>
+</fieldset>

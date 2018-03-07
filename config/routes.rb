@@ -13,10 +13,10 @@ Rails.application.routes.draw do
   end
   resources :tags
   resources :users
+  resources :messages, only:[:new, :create, :destroy]
   resources :user_sessions, only: [:new, :create, :destroy]
   get 'login' =>'user_sessions#new'
   get 'logout' =>'user_sessions#destroy'
   get 'signup' =>'users#new'
-  get 'messages/new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -24,13 +24,13 @@
       <%= form.password_field :password_confirmation, id: :user_password_confirmation %>
     </div>
 
-    <%if !@user.username%>
+    <%if ! logged_in? %>
       <div id="remember_me" class="field">
-        <%=form.label :remember_me, 'remember me on this computer'%>
-        <%=form.check_box :remember_me%>
+        <%=label_tag :remember_me, 'remember me on this computer'%>
+        <%=check_box_tag :remember_me, false %>
       </div>
     <%end%>
 
-      <%= form.submit (@user.username ? 'Create!' : 'Update'),  class:'mainbtn'%>
+      <%= form.submit (logged_in? ? 'Update' : 'Create!'),  class:'mainbtn'%>
   <% end %>
 </fieldset>

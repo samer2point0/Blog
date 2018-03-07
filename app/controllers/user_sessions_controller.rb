@@ -9,12 +9,11 @@ class UserSessionsController < ApplicationController
   end
 
   def create
-    @user=login(session_params)
+    @user=login(session_params[:email], session_params[:password], session_params[:remember_me])
     if(@user)
       flash[:success] = "welcome " +@user.username
       redirect_back_or_to root_url
     else
-      debugger
       flash[:danger]= 'invalid username/password cobmination'
       render :new
     end

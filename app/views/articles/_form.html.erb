@@ -15,13 +15,13 @@
     </div>
 
     <div class="field">
-      <% if @article.image.exists? %>
-        <%= image_tag @article.image.url(:thumb) %><br>
-      <% end%>
-      <%= form.label :image , "Attach a new image" %>
-      <%= form.file_field :image%>
+      <%# if @article.image.exists? %>
+        <%#= image_tag @article.image.url(:thumb) %><br>
+      <%# end%>
+      <%#= form.label :image , "Attach a new image" %>
+      <%#= form.file_field :image%>
     </div>
 
-    <span class="mainbtn"> <%= form.submit %></span>
+    <%= form.submit 'create',class:'mainbtn'%>
   <% end %>
 </fieldset>

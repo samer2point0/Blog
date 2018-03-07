@@ -27,7 +27,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         flash[:success]='user was successfully created.'
-        auto_login(@user, should_remember:user_params[:remember_me])
+        auto_login(@user, should_remember:params[:remember_me])
         format.html { redirect_to @user }
         format.js {redirect_back_or_to(@user, remote:true)}
       else
@@ -53,6 +53,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit( :email, :username, :password, :password_confirmation, :remember_me)
+      params.require(:user).permit( :email, :username, :password, :password_confirmation)
     end
 end

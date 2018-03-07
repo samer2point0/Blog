@@ -1,9 +1,9 @@
-<section id="comment">
-  <div id="user_thumb">
-    <%=render 'shared/user_thumb'%>
+<section class="comment">
+  <div class="user_thumb">
+    <%=render 'shared/user_thumb', user:comment.user%>
   </div>
-  <div id="commentBody">
+  <div class="commentBody">
     <%=comment.body%> <br>
-    <p class="date">Posted <%=distance_of_time_in_words(comment.created_at,Time.now)%> ago</p>
+    <span class="date">Posted <%=distance_of_time_in_words(comment.created_at,Time.now)%> ago</span>
   </div>
 </section>
