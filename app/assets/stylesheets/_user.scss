@@ -14,39 +14,103 @@
   right: 0;
   top: 0;
   #user_info{
+    overflow: auto;
     position: relative;
-    z-index: 3;
+    z-index: 4;
     width:300px;
     height: 400px;
     margin: auto;
-    background-color: black;
+    background-color: white;
+    border: 5px solid $footer_color;
+    border-radius: 5px;
+    transition: all 0.5s;
+    &:hover{
+      border: 1px solid $footer_color ;
+      padding: 4px;
+      height: 410px;
+      width: 310px;
+    }
+    #user_header{
+      overflow: auto;
+      display: block;
+      float: none;
+      margin: 10px;
+      margin-top: 0;
+      border-bottom: 1px solid $footer_color;
+      font-family: $Heading_font;
+      color: $Heading_font_color;
+      a.right{
+        text-shadow: none;
+        margin-top: 20px;
+        float: right;
+      }
+      h1{
+        text-align: center;
+        margin: 0;
+      }
+      img{
+        float: left;
+        display: block;
+        border: 7px solid $tags_color;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        &:hover{
+          box-shadow: 0 0 20px 0;
+        }
+      }
+      p{
+        float: left;
+        display: inline-block;
+        font-weight: 500;
+        margin: 0;
+      }
+    }
   }
+
   .popup_commands{
     position: relative;
+    top: 50px;
     margin: auto;
     height:100px;
-    width: 340px;
+    width: 320px;
     div[id|="popup"]{
-      position: absolute;
+      position: relative;
+      cursor: pointer;
       z-index: 2;
-      height: 520px;
-      width:170px;
+      width:140px;
+      height: 100%;
       color: white;
       opacity: 0.6;
-      font-size:150%;
+      font-size:120%;
       text-align: center;
+      transition: all 0.5s;
       &:hover{
         opacity: 0.9;
+        z-index: 3;
+        width: 180px;
+        font-size: 150%;
       }
     }
     #popup-save{
       background-color: $save;
-      left: 0;
+      border-top-left-radius: 10px;
+      float: left;
     }
     #popup-close{
       background-color: $close;
-      right:0;
+      float: right;
+      border-top-right-radius: 10px;
     }
   }
-
+}
+.user_thumb{
+  h4 {
+    margin: 0;
+  }
+  img{
+    float: left;
+    border: 3px solid $tags_color;
+    border-radius: 3px;
+    margin: 5px;
+  }
 }

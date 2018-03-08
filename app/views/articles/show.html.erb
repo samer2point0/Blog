@@ -4,9 +4,9 @@
 </article>
 
 <section id="comments">
-  <header >
+  <header>
     <h3>Comments (<%= @article.comments.size %>) </h3>
-    <%=render partial: 'comments/form' %>
+    <%=render 'comments/form' %>
   </header>
   <div class="standalone">
     <%=render @article.comments %>

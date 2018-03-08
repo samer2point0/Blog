@@ -1,3 +1,29 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#comments{
+  position: relative;
+  z-index: 1;
+  width: 320px;
+  float: left;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid $footer_color;
+  transition: all 0.5s;
+  &:hover{
+    border: 5px solid $footer_color;
+  }
+  .comment{
+    overflow: auto;
+    border-bottom: 1px solid $footer_color;
+    &:hover{
+      box-shadow: 0 0 10px 0;
+    }
+    .date{
+      color: grey;
+      size:80%;
+    }
+
+  }
+
+}

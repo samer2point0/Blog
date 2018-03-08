@@ -21,6 +21,7 @@ article.Article{
   z-index: 1;
   border-left: solid 5px $secondary_color;
   &.main{
+    min-width: 320px;
     max-width: 850px;
     border-radius: 20px 5px;
     border-left-color: $footer_color;

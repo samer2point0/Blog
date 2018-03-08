@@ -4,10 +4,18 @@
     <div id="popup-close" onclick="close_popup()">
         Close
     </div>
-    <%=link_to(login_path, remote:true) do%>
+    <%if logged_in?%>
+    <%=link_to(logout_path) do%>
       <div id="popup-save">
-        login
+        logout
       </div>
+    <%end%>
+    <%else%>
+      <%=link_to(login_path, remote:true) do%>
+        <div id="popup-save">
+          login
+        </div>
+      <%end%>
     <%end%>
   </div>
   <section id='user_info'>
